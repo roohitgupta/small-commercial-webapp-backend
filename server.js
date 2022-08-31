@@ -3,6 +3,7 @@ const connect = require('./db');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const Router = express.Router();
+const { ProductForm } = require('./controller/controller'); 
 
 const app = express();
 app.use(express.json());
@@ -10,7 +11,7 @@ app.use(cors());
 dotenv.config();
 
 app.use('/api', Router);
-// Router.post('/product/form', ProductForm);
+Router.post('/product/form', ProductForm);
 
 
 
